@@ -348,8 +348,10 @@
 
   // ---------- Data loading ----------
   async function loadFeed() {
-    // Fresh copy from the GitHub API first; the raw CDN (cached up to ~5 min) as fallback.
+    // Same-origin copy first (Netlify redeploys on every push, works with a private repo),
+    // then the GitHub API and raw CDN (only reachable while the repo is public).
     const sources = [
+      () => fetch('feed.json?t=' + Date.now(), { cache: 'no-store' }),
       () => fetch(CFG.feedApi, { headers: { Accept: 'application/vnd.github.raw' }, cache: 'no-store' }),
       () => fetch(CFG.feedRaw + '?t=' + Date.now(), { cache: 'no-store' }),
     ];
