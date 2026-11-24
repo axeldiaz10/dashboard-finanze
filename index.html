@@ -79,9 +79,10 @@
   .card h2 small { font-weight: 400; color: var(--text-muted); font-size: 11px; }
   .span-8 { grid-column: span 8; } .span-4 { grid-column: span 4; } .span-6 { grid-column: span 6; } .span-12 { grid-column: span 12; }
   @media (max-width: 980px) { .span-8, .span-4, .span-6 { grid-column: span 12; } }
+  @media (max-width: 560px) { .app { padding: 10px; } .kpis { grid-template-columns: repeat(2, 1fr); } .kpi .value { font-size: 19px; } .bars .row { grid-template-columns: 90px 1fr 104px; } }
   table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
   th { text-align: left; font-weight: 500; color: var(--text-muted); font-size: 12px; padding: 6px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
-  td { padding: 7px 8px; border-bottom: 1px solid var(--grid); vertical-align: middle; }
+  td { padding: 7px 8px; border-bottom: 1px solid var(--grid); vertical-align: middle; white-space: nowrap; }
   td.num, th.num { text-align: right; }
   tr.group td { background: var(--surface-2); font-weight: 600; font-size: 12px; color: var(--text-secondary); }
   .table-scroll { overflow-x: auto; }
@@ -98,7 +99,7 @@
   .legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; }
   .legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
   .tooltip { position: absolute; pointer-events: none; background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; font-size: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.12); display: none; white-space: nowrap; z-index: 5; }
-  .bars .row { display: grid; grid-template-columns: 110px 1fr 120px; gap: 8px; align-items: center; margin: 6px 0; font-size: 13px; }
+  .bars .row { display: grid; grid-template-columns: 100px 1fr 112px; gap: 8px; align-items: center; margin: 6px 0; font-size: 13px; }
   .bars .track { height: 10px; background: var(--surface-2); border-radius: 5px; overflow: hidden; }
   .bars .fill { height: 100%; background: var(--series-1); border-radius: 5px; }
   .bars .v { text-align: right; font-variant-numeric: tabular-nums; color: var(--text-secondary); font-size: 12px; }
@@ -347,13 +348,20 @@
 
   // ---------- Data loading ----------
   async function loadFeed() {
-    try {
-      let r = await fetch(CFG.feedApi, { headers: { Accept: 'application/vnd.github.raw' }, cache: 'no-store' });
-      if (!r.ok) r = await fetch(CFG.feedRaw + '?t=' + Date.now(), { cache: 'no-store' });
-      if (!r.ok) throw new Error('feed');
-      S.feed = await r.json();
-    } catch (e) {
-      console.warn('feed', e);
+    // Fresh copy from the GitHub API first; the raw CDN (cached up to ~5 min) as fallback.
+    const sources = [
+      () => fetch(CFG.feedApi, { headers: { Accept: 'application/vnd.github.raw' }, cache: 'no-store' }),
+      () => fetch(CFG.feedRaw + '?t=' + Date.now(), { cache: 'no-store' }),
+    ];
+    for (const get of sources) {
+      try {
+        const r = await get();
+        if (!r.ok) continue;
+        S.feed = await r.json();
+        return;
+      } catch (e) {
+        console.warn('feed', e);
+      }
     }
   }
 
@@ -632,7 +640,7 @@
         const cash = feedProfiles[p] ? +feedProfiles[p].cash : 0;
         const alloc = feedProfiles[p] ? +feedProfiles[p].allocated : 0;
         const v = posVal + cash;
-        items.push({ k: p, v, sub: alloc ? `${pct(v / alloc - 1)} vs. ${nf2.format(alloc)}` : '' });
+        items.push({ k: p, v, sub: alloc ? `${pct(v / alloc - 1)} vs. asignado` : '' });
       }
       $('dist-note').textContent = 'Valor de cada perfil = posiciones en vivo + su liquidez (la liquidez por perfil la actualizan las tareas).';
     } else {
@@ -751,7 +759,7 @@
     hit.addEventListener('touchstart', move, { passive: true });
     hit.addEventListener('mouseleave', () => { cross.setAttribute('visibility', 'hidden'); tip.style.display = 'none'; });
     wrap.appendChild(svg);
-    $('hist-note').textContent = n < 4 ? 'pocos días de datos todavía' : `${n} días`;
+    $('hist-note').textContent = n < 2 ? 'la línea se dibuja a partir del segundo día' : (n < 4 ? 'pocos días de datos todavía' : `${n} días`);
   }
 
   function renderNews() {
@@ -855,11 +863,17 @@
     }
   }
 
+  function feedInfo() {
+    const f = S.feed;
+    if (!f || !f.updated_at) return 'Sin datos de análisis todavía';
+    return `Análisis actualizado ${ago(f.updated_at)}${f.updated_by ? ' (' + f.updated_by + ')' : ''}`;
+  }
+
   function renderStatic() {
     const f = S.feed;
     const h = $('headline');
     if (f && f.headline) { h.textContent = f.headline; h.hidden = false; } else h.hidden = true;
-    $('feed-info').textContent = f ? `Análisis actualizado ${ago(f.updated_at)} (${f.updated_by || ''})` : 'Sin datos de análisis';
+    $('feed-info').textContent = feedInfo();
     const su = f && safeUrl(f.sheet_url); if (su) $('sheet-link').href = su;
     renderNews(); renderCatalysts(); renderOrders(); renderPredictions();
   }
@@ -929,7 +943,7 @@
   setInterval(() => { if (S.key) loadFills().then(renderOrders).catch(() => {}); }, CFG.refreshFillsMs);
   setInterval(() => { loadFeed().then(renderStatic); }, CFG.refreshFeedMs);
   setInterval(() => { if (S.key) loadHistory().then(renderLive).catch(() => {}); }, CFG.refreshHistoryMs);
-  setInterval(() => { if (S.feed) $('feed-info').textContent = `Análisis actualizado ${ago(S.feed.updated_at)} (${S.feed.updated_by || ''})`; }, 30_000);
+  setInterval(() => { $('feed-info').textContent = feedInfo(); }, 30_000);
 
   start();
 })();
