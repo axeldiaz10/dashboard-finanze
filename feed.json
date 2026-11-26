@@ -1,61 +1,479 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-24T21:10:00Z",
+  "updated_at": "2026-11-26T20:30:00Z",
   "updated_by": "Configuración inicial",
-  "start": { "date": "2026-11-24", "capital": 10000, "spy": 718.48, "btc": 59815.5 },
+  "start": {
+    "date": "2026-11-24",
+    "capital": 10000,
+    "spy": 718.48,
+    "btc": 59815.5
+  },
   "profiles": {
-    "Conservador": { "allocated": 4000, "cash": 4000.00, "stop_pct": 8 },
-    "Moderado": { "allocated": 3500, "cash": 2813.63, "stop_pct": 12 },
-    "Agresivo": { "allocated": 2500, "cash": 1617.27, "stop_pct": 20 }
+    "Conservador": {
+      "allocated": 4000,
+      "cash": 4000.0,
+      "stop_pct": 8
+    },
+    "Moderado": {
+      "allocated": 3500,
+      "cash": 2813.63,
+      "stop_pct": 12
+    },
+    "Agresivo": {
+      "allocated": 2500,
+      "cash": 1617.27,
+      "stop_pct": 20
+    }
   },
   "assets": {
-    "BIL": { "profile": "Conservador", "market": "Letras EE.UU.", "name": "Letras del Tesoro 1-3 meses", "conviction": "Alta", "thesis": "Liquidez que rinde tasa con riesgo de precio casi nulo." },
-    "SPY": { "profile": "Conservador", "market": "EE.UU.", "name": "S&P 500", "conviction": "Media", "thesis": "Núcleo de la cartera: ganancias corporativas sostienen al índice pese al debate de tasas." },
-    "GLD": { "profile": "Conservador", "market": "Commodities", "name": "Oro", "conviction": "Media", "thesis": "Cobertura ante inflación persistente y riesgo geopolítico." },
-    "QQQ": { "profile": "Moderado", "market": "EE.UU.", "name": "Nasdaq 100", "conviction": "Media", "thesis": "Las grandes tecnológicas siguen liderando por la inversión en IA." },
-    "EEM": { "profile": "Moderado", "market": "Emergentes", "name": "Mercados emergentes", "conviction": "Baja", "thesis": "Diversificación fuera de EE.UU. con valuaciones más bajas." },
-    "ARGT": { "profile": "Moderado", "market": "Argentina", "name": "Acciones argentinas", "conviction": "Media", "thesis": "Riesgo país en niveles bajos sostiene acciones locales." },
-    "BTC/USD": { "profile": "Moderado", "market": "Cripto", "name": "Bitcoin", "conviction": "Baja", "thesis": "Posición chica para capturar un rebote tras la corrección." },
-    "IWM": { "profile": "Agresivo", "market": "EE.UU.", "name": "Russell 2000", "conviction": "Media", "thesis": "Empresas chicas, las más sensibles a una señal de alivio en tasas." },
-    "ETH/USD": { "profile": "Agresivo", "market": "Cripto", "name": "Ethereum", "conviction": "Baja", "thesis": "Rebote si vuelve el apetito por riesgo en cripto." },
-    "SOL/USD": { "profile": "Agresivo", "market": "Cripto", "name": "Solana", "conviction": "Baja", "thesis": "Apuesta de mayor beta dentro de cripto." }
+    "BIL": {
+      "profile": "Conservador",
+      "market": "Letras EE.UU.",
+      "name": "Letras del Tesoro 1-3 meses",
+      "conviction": "Alta",
+      "thesis": "Liquidez que rinde tasa con riesgo de precio casi nulo."
+    },
+    "SPY": {
+      "profile": "Conservador",
+      "market": "EE.UU.",
+      "name": "S&P 500",
+      "conviction": "Media",
+      "thesis": "Núcleo de la cartera: ganancias corporativas sostienen al índice pese al debate de tasas."
+    },
+    "GLD": {
+      "profile": "Conservador",
+      "market": "Commodities",
+      "name": "Oro",
+      "conviction": "Media",
+      "thesis": "Cobertura ante inflación persistente y riesgo geopolítico."
+    },
+    "QQQ": {
+      "profile": "Moderado",
+      "market": "EE.UU.",
+      "name": "Nasdaq 100",
+      "conviction": "Media",
+      "thesis": "Las grandes tecnológicas siguen liderando por la inversión en IA."
+    },
+    "EEM": {
+      "profile": "Moderado",
+      "market": "Emergentes",
+      "name": "Mercados emergentes",
+      "conviction": "Baja",
+      "thesis": "Diversificación fuera de EE.UU. con valuaciones más bajas."
+    },
+    "ARGT": {
+      "profile": "Moderado",
+      "market": "Argentina",
+      "name": "Acciones argentinas",
+      "conviction": "Media",
+      "thesis": "Riesgo país en niveles bajos sostiene acciones locales."
+    },
+    "BTC/USD": {
+      "profile": "Moderado",
+      "market": "Cripto",
+      "name": "Bitcoin",
+      "conviction": "Baja",
+      "thesis": "Posición chica para capturar un rebote tras la corrección."
+    },
+    "IWM": {
+      "profile": "Agresivo",
+      "market": "EE.UU.",
+      "name": "Russell 2000",
+      "conviction": "Media",
+      "thesis": "Empresas chicas, las más sensibles a una señal de alivio en tasas."
+    },
+    "ETH/USD": {
+      "profile": "Agresivo",
+      "market": "Cripto",
+      "name": "Ethereum",
+      "conviction": "Baja",
+      "thesis": "Rebote si vuelve el apetito por riesgo en cripto."
+    },
+    "SOL/USD": {
+      "profile": "Agresivo",
+      "market": "Cripto",
+      "name": "Solana",
+      "conviction": "Baja",
+      "thesis": "Apuesta de mayor beta dentro de cripto."
+    }
   },
   "headline": "Cartera recién armada: cripto comprada hoy, acciones y ETFs entran mañana a la apertura.",
   "news": [],
   "catalysts": [
-    { "id": "C-001", "date": "2026-11-24", "time": "Después del cierre", "event": "Ambarella (AMBA): balance 3T FY27", "impact": "Alto", "assets": "AMBA (candidata)", "scenario": "Base 50%: dentro de la guía, sin novedades de NXP", "plan": "Sin posición. Si se confirma NXP, evaluar compra limitada; si decepciona, descartar.", "status": "Próximo" },
-    { "id": "C-002", "date": "2026-11-25", "time": "10:30", "event": "Inflación PCE núcleo de octubre", "impact": "Alto", "assets": "QQQ, IWM, SPY, GLD, BTC", "scenario": "Base 55%: en línea; caliente 25%; frío 20%", "plan": "No anticipar operaciones. Si sale caliente y QQQ/IWM caen >2%, no comprar la caída hasta el empleo del 4/12.", "status": "Próximo" },
-    { "id": "C-003", "date": "2026-11-26", "time": "Todo el día", "event": "Feriado de Acción de Gracias (EE.UU. cerrado); 27/11 cierre 15:00", "impact": "Bajo", "assets": "Acciones y ETFs", "scenario": "Baja liquidez", "plan": "No enviar entradas nuevas el 27/11.", "status": "Próximo" },
-    { "id": "C-004", "date": "2026-11-26", "time": "A confirmar", "event": "Vista (VIST): decisión final de inversión de Argentina GNL", "impact": "Medio", "assets": "VIST (candidata), ARGT", "scenario": "Confirma 50%; posterga 35%; cancela 15%", "plan": "Si confirma y cierra >52 con Brent >85: orden limitada en la revisión del viernes.", "status": "Próximo" },
-    { "id": "C-005", "date": "2026-12-01", "time": "A confirmar", "event": "Xeris (XERS) en conferencia Piper Sandler", "impact": "Medio", "assets": "XERS (candidata)", "scenario": "Positivo 40%; neutro 45%; negativo 15%", "plan": "Mantener gatillo del radar.", "status": "Próximo" },
-    { "id": "C-006", "date": "2026-12-04", "time": "10:30", "event": "Empleo de noviembre (EE.UU.)", "impact": "Alto", "assets": "Toda la cartera", "scenario": "A completar el domingo", "plan": "A definir el domingo 29/11.", "status": "Próximo" },
-    { "id": "C-007", "date": "2026-12-09", "time": "16:00", "event": "Fed: decisión de tasas (FOMC 8-9/12)", "impact": "Alto", "assets": "Toda la cartera", "scenario": "A completar", "plan": "A definir en la revisión del 4/12.", "status": "Próximo" },
-    { "id": "C-008", "date": "2026-12-10", "time": "10:30", "event": "Inflación CPI de noviembre", "impact": "Alto", "assets": "Toda la cartera", "scenario": "A completar", "plan": "A definir.", "status": "Próximo" }
+    {
+      "id": "C-001",
+      "date": "2026-11-24",
+      "time": "Después del cierre",
+      "event": "Ambarella (AMBA): balance 3T FY27",
+      "impact": "Alto",
+      "assets": "AMBA (candidata)",
+      "scenario": "Base 50%: dentro de la guía, sin novedades de NXP",
+      "plan": "Sin posición. Si se confirma NXP, evaluar compra limitada; si decepciona, descartar.",
+      "status": "Próximo"
+    },
+    {
+      "id": "C-002",
+      "date": "2026-11-25",
+      "time": "10:30",
+      "event": "Inflación PCE núcleo de octubre",
+      "impact": "Alto",
+      "assets": "QQQ, IWM, SPY, GLD, BTC",
+      "scenario": "Base 55%: en línea; caliente 25%; frío 20%",
+      "plan": "No anticipar operaciones. Si sale caliente y QQQ/IWM caen >2%, no comprar la caída hasta el empleo del 4/12.",
+      "status": "Próximo"
+    },
+    {
+      "id": "C-003",
+      "date": "2026-11-26",
+      "time": "Todo el día",
+      "event": "Feriado de Acción de Gracias (EE.UU. cerrado); 27/11 cierre 15:00",
+      "impact": "Bajo",
+      "assets": "Acciones y ETFs",
+      "scenario": "Baja liquidez",
+      "plan": "No enviar entradas nuevas el 27/11.",
+      "status": "Próximo"
+    },
+    {
+      "id": "C-004",
+      "date": "2026-11-26",
+      "time": "A confirmar",
+      "event": "Vista (VIST): decisión final de inversión de Argentina GNL",
+      "impact": "Medio",
+      "assets": "VIST (candidata), ARGT",
+      "scenario": "Confirma 50%; posterga 35%; cancela 15%",
+      "plan": "Si confirma y cierra >52 con Brent >85: orden limitada en la revisión del viernes.",
+      "status": "Próximo"
+    },
+    {
+      "id": "C-005",
+      "date": "2026-12-01",
+      "time": "A confirmar",
+      "event": "Xeris (XERS) en conferencia Piper Sandler",
+      "impact": "Medio",
+      "assets": "XERS (candidata)",
+      "scenario": "Positivo 40%; neutro 45%; negativo 15%",
+      "plan": "Mantener gatillo del radar.",
+      "status": "Próximo"
+    },
+    {
+      "id": "C-006",
+      "date": "2026-12-04",
+      "time": "10:30",
+      "event": "Empleo de noviembre (EE.UU.)",
+      "impact": "Alto",
+      "assets": "Toda la cartera",
+      "scenario": "A completar el domingo",
+      "plan": "A definir el domingo 29/11.",
+      "status": "Próximo"
+    },
+    {
+      "id": "C-007",
+      "date": "2026-12-09",
+      "time": "16:00",
+      "event": "Fed: decisión de tasas (FOMC 8-9/12)",
+      "impact": "Alto",
+      "assets": "Toda la cartera",
+      "scenario": "A completar",
+      "plan": "A definir en la revisión del 4/12.",
+      "status": "Próximo"
+    },
+    {
+      "id": "C-008",
+      "date": "2026-12-10",
+      "time": "10:30",
+      "event": "Inflación CPI de noviembre",
+      "impact": "Alto",
+      "assets": "Toda la cartera",
+      "scenario": "A completar",
+      "plan": "A definir.",
+      "status": "Próximo"
+    }
   ],
   "planned_orders": [
-    { "date": "2026-11-25", "asset": "BIL", "profile": "Conservador", "side": "Compra", "type": "A la apertura", "qty": 16 },
-    { "date": "2026-11-25", "asset": "SPY", "profile": "Conservador", "side": "Compra", "type": "A la apertura", "qty": 2 },
-    { "date": "2026-11-25", "asset": "GLD", "profile": "Conservador", "side": "Compra", "type": "A la apertura", "qty": 3 },
-    { "date": "2026-11-25", "asset": "QQQ", "profile": "Moderado", "side": "Compra", "type": "A la apertura", "qty": 2 },
-    { "date": "2026-11-25", "asset": "EEM", "profile": "Moderado", "side": "Compra", "type": "A la apertura", "qty": 10 },
-    { "date": "2026-11-25", "asset": "ARGT", "profile": "Moderado", "side": "Compra", "type": "A la apertura", "qty": 10 },
-    { "date": "2026-11-25", "asset": "IWM", "profile": "Agresivo", "side": "Compra", "type": "A la apertura", "qty": 1 }
+    {
+      "date": "2026-11-25",
+      "asset": "BIL",
+      "profile": "Conservador",
+      "side": "Compra",
+      "type": "A la apertura",
+      "qty": 16
+    },
+    {
+      "date": "2026-11-25",
+      "asset": "SPY",
+      "profile": "Conservador",
+      "side": "Compra",
+      "type": "A la apertura",
+      "qty": 2
+    },
+    {
+      "date": "2026-11-25",
+      "asset": "GLD",
+      "profile": "Conservador",
+      "side": "Compra",
+      "type": "A la apertura",
+      "qty": 3
+    },
+    {
+      "date": "2026-11-25",
+      "asset": "QQQ",
+      "profile": "Moderado",
+      "side": "Compra",
+      "type": "A la apertura",
+      "qty": 2
+    },
+    {
+      "date": "2026-11-25",
+      "asset": "EEM",
+      "profile": "Moderado",
+      "side": "Compra",
+      "type": "A la apertura",
+      "qty": 10
+    },
+    {
+      "date": "2026-11-25",
+      "asset": "ARGT",
+      "profile": "Moderado",
+      "side": "Compra",
+      "type": "A la apertura",
+      "qty": 10
+    },
+    {
+      "date": "2026-11-25",
+      "asset": "IWM",
+      "profile": "Agresivo",
+      "side": "Compra",
+      "type": "A la apertura",
+      "qty": 1
+    }
   ],
   "watchlist": [
-    { "asset": "XERS", "name": "Xeris Biopharma", "trigger": "Pullback a USD 15-15,50 o cierre >17,30 con volumen", "status": "Observando" },
-    { "asset": "VIST", "name": "Vista Energy", "trigger": "FID Argentina GNL y cierre >52 con Brent >85", "status": "Observando" },
-    { "asset": "AMBA", "name": "Ambarella", "trigger": "Anuncio oficial de NXP o cierre sostenido >61", "status": "Observando" }
+    {
+      "asset": "XERS",
+      "name": "Xeris Biopharma",
+      "trigger": "Pullback a USD 15-15,50 o cierre >17,30 con volumen",
+      "status": "Observando",
+      "levels": {
+        "trigger": 17.3,
+        "zone": [
+          15.0,
+          15.5
+        ],
+        "target": 19.5
+      },
+      "conditions": [
+        {
+          "text": "Cierre > 17,30",
+          "met": false
+        },
+        {
+          "text": "con volumen alto",
+          "met": false
+        },
+        {
+          "text": "o baja a 15–15,50",
+          "met": false
+        }
+      ],
+      "state": "esperando"
+    },
+    {
+      "asset": "VIST",
+      "name": "Vista Energy",
+      "trigger": "FID Argentina GNL y cierre >52 con Brent >85",
+      "status": "Observando",
+      "levels": {
+        "trigger": 52.0,
+        "target": 58.0
+      },
+      "conditions": [
+        {
+          "text": "Decisión final GNL (FID)",
+          "met": false
+        },
+        {
+          "text": "Cierre > 52",
+          "met": false
+        },
+        {
+          "text": "Brent > 85",
+          "met": false
+        }
+      ],
+      "state": "esperando"
+    },
+    {
+      "asset": "AMBA",
+      "name": "Ambarella",
+      "trigger": "Anuncio oficial de NXP o cierre sostenido >61",
+      "status": "Observando",
+      "levels": {
+        "trigger": 61.0,
+        "target": 70.0
+      },
+      "conditions": [
+        {
+          "text": "Anuncio oficial de NXP",
+          "met": false
+        },
+        {
+          "text": "o cierre sostenido > 61",
+          "met": false
+        }
+      ],
+      "note": "Cayó de 55,50 a 35,67 entre el 23 y el 25/11 tras el balance. El plan era descartarla si decepcionaba: la revisa la planificación del domingo.",
+      "state": "esperando"
+    }
   ],
   "predictions": {
     "open": [
-      { "id": "P-001", "asset": "XERS", "direction": "Sube", "entry": 16.97, "target": 19.5, "due": "2027-01-29", "probability": 0.55 },
-      { "id": "P-002", "asset": "VIST", "direction": "Sube", "entry": 49.58, "target": 58.0, "due": "2027-02-12", "probability": 0.35 },
-      { "id": "P-003", "asset": "AMBA", "direction": "Sube", "entry": 59.75, "target": 70.0, "due": "2027-01-08", "probability": 0.35 }
+      {
+        "id": "P-001",
+        "asset": "XERS",
+        "direction": "Sube",
+        "entry": 16.97,
+        "target": 19.5,
+        "due": "2027-01-29",
+        "probability": 0.55
+      },
+      {
+        "id": "P-002",
+        "asset": "VIST",
+        "direction": "Sube",
+        "entry": 49.58,
+        "target": 58.0,
+        "due": "2027-02-12",
+        "probability": 0.35
+      },
+      {
+        "id": "P-003",
+        "asset": "AMBA",
+        "direction": "Sube",
+        "entry": 59.75,
+        "target": 70.0,
+        "due": "2027-01-08",
+        "probability": 0.35
+      }
     ],
     "closed": 0,
     "hits": 0,
     "brier": null
   },
   "phase1": "Fase 1 (simulada en planilla, 17 al 24/11): cartera -3,31% · S&P 500 -2,39% · BTC -8,04%",
-  "sheet_url": "https://claude.ai/artifact/DjPVMjNTKErWTQST8ZnNJY"
+  "sheet_url": "https://claude.ai/artifact/DjPVMjNTKErWTQST8ZnNJY",
+  "sentiment": {
+    "stocks": {
+      "value": 15.23,
+      "label": "Miedo extremo",
+      "source": "CNN Fear & Greed",
+      "as_of": "2026-11-25",
+      "history": [
+        {
+          "date": "2026-10-27",
+          "value": 32.89
+        },
+        {
+          "date": "2026-10-28",
+          "value": 34.4
+        },
+        {
+          "date": "2026-10-29",
+          "value": 30.77
+        },
+        {
+          "date": "2026-10-30",
+          "value": 26.32
+        },
+        {
+          "date": "2026-11-02",
+          "value": 19.39
+        },
+        {
+          "date": "2026-11-03",
+          "value": 23.54
+        },
+        {
+          "date": "2026-11-04",
+          "value": 34.17
+        },
+        {
+          "date": "2026-11-05",
+          "value": 19.99
+        },
+        {
+          "date": "2026-11-06",
+          "value": 24.35
+        },
+        {
+          "date": "2026-11-09",
+          "value": 31.51
+        },
+        {
+          "date": "2026-11-10",
+          "value": 37.37
+        },
+        {
+          "date": "2026-11-11",
+          "value": 35.94
+        },
+        {
+          "date": "2026-11-12",
+          "value": 40.34
+        },
+        {
+          "date": "2026-11-13",
+          "value": 37.37
+        },
+        {
+          "date": "2026-11-16",
+          "value": 31.07
+        },
+        {
+          "date": "2026-11-17",
+          "value": 25.95
+        },
+        {
+          "date": "2026-11-18",
+          "value": 29.89
+        },
+        {
+          "date": "2026-11-19",
+          "value": 15.87
+        },
+        {
+          "date": "2026-11-20",
+          "value": 18.59
+        },
+        {
+          "date": "2026-11-23",
+          "value": 14.88
+        },
+        {
+          "date": "2026-11-24",
+          "value": 10.96
+        },
+        {
+          "date": "2026-11-25",
+          "value": 15.23
+        }
+      ]
+    },
+    "note": "",
+    "crypto": {
+      "value": 11,
+      "label": "Miedo extremo",
+      "source": "alternative.me",
+      "as_of": "2026-11-26",
+      "history": [
+        {
+          "date": "2026-11-25",
+          "value": 13
+        },
+        {
+          "date": "2026-11-26",
+          "value": 11
+        }
+      ]
+    }
+  }
 }
