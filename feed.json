@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-26T20:20:00Z",
-  "updated_by": "Ajuste manual 26/11",
+  "updated_at": "2026-11-26T21:50:00Z",
+  "updated_by": "Cierre 26/11",
   "start": {
     "date": "2026-11-24",
     "capital": 10000,
@@ -97,7 +97,7 @@
       "thesis": "Apuesta de mayor beta dentro de cripto."
     }
   },
-  "headline": "Mañana (media rueda) entra el perfil Conservador: BIL, SPY y GLD con órdenes limitadas. QQQ se decide el viernes; EEM, ARGT e IWM quedaron canceladas por sus invalidadores.",
+  "headline": "Mañana (media rueda hasta 15:00) pueden entrar BIL, SPY y GLD con limitadas ya enviadas; cripto sube 3 días seguidos y los stops se subieron. QQQ se decide el viernes.",
   "news": [
     {
       "title": "La Fed da por hecha una suba de tasas el 9/12 y algunos piden más",
@@ -143,9 +143,9 @@
       "event": "Ambarella (AMBA): balance 3T FY27",
       "impact": "Alto",
       "assets": "AMBA (candidata)",
-      "scenario": "Base 50%: dentro de la guía, sin novedades de NXP",
+      "scenario": "Pasó el pesimista, más fuerte: guía 4T 70-75M y −46% hasta ~30",
       "plan": "Sin posición. Si se confirma NXP, evaluar compra limitada; si decepciona, descartar.",
-      "status": "Próximo"
+      "status": "Resuelto"
     },
     {
       "id": "C-002",
@@ -154,9 +154,20 @@
       "event": "Inflación PCE núcleo de octubre",
       "impact": "Alto",
       "assets": "QQQ, IWM, SPY, GLD, BTC",
-      "scenario": "Base 55%: en línea; caliente 25%; frío 20%",
+      "scenario": "Núcleo 0,3% m/m en línea pero 3,3% i.a.; mercado se recuperó en el día",
       "plan": "No anticipar operaciones. Si sale caliente y QQQ/IWM caen >2%, no comprar la caída hasta el empleo del 4/12.",
-      "status": "Próximo"
+      "status": "Resuelto"
+    },
+    {
+      "id": "C-009",
+      "date": "2026-11-25",
+      "time": "A confirmar",
+      "event": "Aranceles Sección 301 a 14 economías (propuesta)",
+      "impact": "Alto",
+      "assets": "QQQ, IWM, SPY, EEM, BTC, GLD",
+      "scenario": "Pasó el moderado/negociable: comentarios hasta 5/1, audiencias desde 25/1",
+      "plan": "No comprar QQQ, IWM ni emergentes hasta conocer el detalle.",
+      "status": "Resuelto"
     },
     {
       "id": "C-003",
@@ -165,20 +176,37 @@
       "event": "Feriado de Acción de Gracias (EE.UU. cerrado); 27/11 cierre 15:00",
       "impact": "Bajo",
       "assets": "Acciones y ETFs",
-      "scenario": "Baja liquidez",
+      "scenario": "Feriado sin novedades; cripto +0,8% a +1,7%",
       "plan": "No enviar entradas nuevas el 27/11.",
-      "status": "Próximo"
+      "status": "Resuelto"
     },
     {
       "id": "C-004",
-      "date": "2026-11-26",
+      "date": "2026-11-30",
       "time": "A confirmar",
-      "event": "Vista (VIST): decisión final de inversión de Argentina GNL",
+      "event": "Argentina LNG: firma de la decisión final de inversión (YPF, Eni, XRG)",
       "impact": "Medio",
-      "assets": "VIST (candidata), ARGT",
-      "scenario": "Confirma 50%; posterga 35%; cancela 15%",
-      "plan": "Si confirma y cierra >52 con Brent >85: orden limitada en la revisión del viernes.",
-      "status": "Próximo"
+      "assets": "VIST (candidata), ARGT, YPF",
+      "scenario": "Se firma el 30/11: 75%",
+      "plan": "Si se firma y VIST cierra >52 con Brent >85: evaluar limitada (Agresivo) en la siguiente revisión. ARGT sigue cancelada por riesgo país >1.000.",
+      "status": "Próximo",
+      "scenarios": [
+        {
+          "label": "Se firma (bueno)",
+          "prob": 0.75,
+          "tone": "bueno"
+        },
+        {
+          "label": "Se posterga (neutro)",
+          "prob": 0.2,
+          "tone": "neutro"
+        },
+        {
+          "label": "Se cae (malo)",
+          "prob": 0.05,
+          "tone": "malo"
+        }
+      ]
     },
     {
       "id": "C-005",
@@ -187,9 +215,26 @@
       "event": "Xeris (XERS) en conferencia Piper Sandler",
       "impact": "Medio",
       "assets": "XERS (candidata)",
-      "scenario": "Positivo 40%; neutro 45%; negativo 15%",
+      "scenario": "Neutro 45%",
       "plan": "Mantener gatillo del radar.",
-      "status": "Próximo"
+      "status": "Próximo",
+      "scenarios": [
+        {
+          "label": "Positivo (bueno)",
+          "prob": 0.4,
+          "tone": "bueno"
+        },
+        {
+          "label": "Neutro",
+          "prob": 0.45,
+          "tone": "neutro"
+        },
+        {
+          "label": "Negativo (malo)",
+          "prob": 0.15,
+          "tone": "malo"
+        }
+      ]
     },
     {
       "id": "C-006",
@@ -223,6 +268,17 @@
       "scenario": "A completar",
       "plan": "A definir.",
       "status": "Próximo"
+    },
+    {
+      "id": "C-010",
+      "date": "2027-01-10",
+      "time": "A confirmar",
+      "event": "EE.UU.-China: vence la tregua comercial; audiencias 301 desde 25/1",
+      "impact": "Alto",
+      "assets": "QQQ, IWM, SPY, EEM, BTC",
+      "scenario": "A completar en la revisión semanal",
+      "plan": "A definir.",
+      "status": "Próximo"
     }
   ],
   "planned_orders": [
@@ -231,7 +287,7 @@
       "asset": "QQQ",
       "profile": "Moderado",
       "side": "Compra",
-      "type": "Limitada",
+      "type": "Mercado a la apertura (OPG)",
       "qty": 2,
       "limit": null
     }
@@ -253,7 +309,7 @@
       "conditions": [
         {
           "text": "Cierre > 17,30",
-          "met": false
+          "met": true
         },
         {
           "text": "con volumen alto",
@@ -264,7 +320,8 @@
           "met": false
         }
       ],
-      "state": "esperando"
+      "state": "esperando",
+      "note": "Cierra arriba de 17,30 desde el 23/11 (17,35 el 25/11), pero con volumen por debajo del promedio: gatillo incompleto."
     },
     {
       "asset": "VIST",
@@ -289,7 +346,8 @@
           "met": false
         }
       ],
-      "state": "esperando"
+      "state": "esperando",
+      "note": "La firma de Argentina GNL pasó al lunes 30/11. VIST cerró 50,15 el 25/11 (falta >52)."
     },
     {
       "asset": "AMBA",
@@ -447,7 +505,7 @@
         }
       ]
     },
-    "note": "",
+    "note": "Miedo extremo en acciones y cripto (último dato 25-26/11; hoy no se pudo actualizar). Cripto rebotó igual y los stops de BTC, ETH y SOL quedaron 12%, 20% y 20% debajo del máximo.",
     "crypto": {
       "value": 11,
       "label": "Miedo extremo",
