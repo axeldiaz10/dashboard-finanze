@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-26T20:30:00Z",
-  "updated_by": "Configuración inicial",
+  "updated_at": "2026-11-26T20:20:00Z",
+  "updated_by": "Ajuste manual 26/11",
   "start": {
     "date": "2026-11-24",
     "capital": 10000,
@@ -97,8 +97,44 @@
       "thesis": "Apuesta de mayor beta dentro de cripto."
     }
   },
-  "headline": "Cartera recién armada: cripto comprada hoy, acciones y ETFs entran mañana a la apertura.",
-  "news": [],
+  "headline": "Mañana (media rueda) entra el perfil Conservador: BIL, SPY y GLD con órdenes limitadas. QQQ se decide el viernes; EEM, ARGT e IWM quedaron canceladas por sus invalidadores.",
+  "news": [
+    {
+      "title": "La Fed da por hecha una suba de tasas el 9/12 y algunos piden más",
+      "summary": "Las minutas de la Fed mostraron que casi todos los miembros ven más subas. El gobernador Waller volvió a pedir media punta en la reunión del 8-9/12; con diciembre casi asegurado, la discusión pasa a enero.",
+      "why": "Tasas más altas presionan a QQQ e IWM y suelen pesar sobre cripto; BIL (letras) se beneficia. Por eso IWM quedó cancelada y QQQ en espera.",
+      "url": "https://pro.thestreet.com/stock-market-today/fed-minutes-almost-all-see-more-hikes-and-a-couple-floated-a-bigger-move",
+      "source": "TheStreet",
+      "assets": [
+        "QQQ",
+        "BIL",
+        "BTC/USD"
+      ]
+    },
+    {
+      "title": "Acciones en miedo extremo: el índice de CNN cayó a 15",
+      "summary": "El índice de miedo y codicia de CNN tocó 11 el 24/11 y cerró el 25/11 en 15, desde 30 hace un mes. En cripto, el índice de alternative.me está en 11.",
+      "why": "El miedo extremo suele aparecer cerca de pisos, pero no los marca: entramos con el perfil Conservador (BIL, SPY, GLD) y dejamos lo más volátil para después del 9/12.",
+      "url": "https://www.cnn.com/markets/fear-and-greed",
+      "source": "CNN",
+      "assets": [
+        "SPY",
+        "BTC/USD"
+      ]
+    },
+    {
+      "title": "Bitcoin encadena semanas de caída con la suba de la Fed en el horizonte",
+      "summary": "Bitcoin acumuló su sexta caída semanal a mediados de noviembre, con liquidaciones de posiciones apalancadas y la expectativa de suba de tasas en diciembre como principales motivos.",
+      "why": "BTC, ETH y SOL son las únicas posiciones abiertas; sus stops están a 12-21% del precio actual.",
+      "url": "https://www.fool.com/investing/2026/11/13/why-bitcoin-is-falling-today/",
+      "source": "The Motley Fool",
+      "assets": [
+        "BTC/USD",
+        "ETH/USD",
+        "SOL/USD"
+      ]
+    }
+  ],
   "catalysts": [
     {
       "id": "C-001",
@@ -191,60 +227,13 @@
   ],
   "planned_orders": [
     {
-      "date": "2026-11-25",
-      "asset": "BIL",
-      "profile": "Conservador",
-      "side": "Compra",
-      "type": "A la apertura",
-      "qty": 16
-    },
-    {
-      "date": "2026-11-25",
-      "asset": "SPY",
-      "profile": "Conservador",
-      "side": "Compra",
-      "type": "A la apertura",
-      "qty": 2
-    },
-    {
-      "date": "2026-11-25",
-      "asset": "GLD",
-      "profile": "Conservador",
-      "side": "Compra",
-      "type": "A la apertura",
-      "qty": 3
-    },
-    {
-      "date": "2026-11-25",
+      "date": "2026-11-30",
       "asset": "QQQ",
       "profile": "Moderado",
       "side": "Compra",
-      "type": "A la apertura",
-      "qty": 2
-    },
-    {
-      "date": "2026-11-25",
-      "asset": "EEM",
-      "profile": "Moderado",
-      "side": "Compra",
-      "type": "A la apertura",
-      "qty": 10
-    },
-    {
-      "date": "2026-11-25",
-      "asset": "ARGT",
-      "profile": "Moderado",
-      "side": "Compra",
-      "type": "A la apertura",
-      "qty": 10
-    },
-    {
-      "date": "2026-11-25",
-      "asset": "IWM",
-      "profile": "Agresivo",
-      "side": "Compra",
-      "type": "A la apertura",
-      "qty": 1
+      "type": "Limitada",
+      "qty": 2,
+      "limit": null
     }
   ],
   "watchlist": [
@@ -475,5 +464,6 @@
         }
       ]
     }
-  }
+  },
+  "news_date": "2026-11-26"
 }
