@@ -36,3 +36,11 @@
 1. Attach the repository with push access (`add_repo`: owner `axeldiaz10`, repo `dashboard-finanze`, access `push`) and clone it as instructed.
 2. Edit `feed.json`, validate it, then commit with message `Update feed (<task> <date>)` and push to `main` with `git -c push.negotiate=true push origin HEAD:main`.
 3. If the push is rejected because the remote moved, `git pull --rebase origin main` and push once more. If it still fails, say so in one line of the task's final message. Never force-push.
+
+## Who updates the dashboard v2 fields
+
+Every task that publishes the feed must also keep these fields current, in addition to what its own prompt lists:
+
+- **Pre-apertura and Cierre**: `sentiment` (both indexes, with their last 30 points, and `note`); `watchlist[].state`, `conditions[].met` and `note` with the latest prices and news; `catalysts[].scenarios` and `time` for any Alto/Medio event in the next 5 business days.
+- **Planificación (Sunday) and Revisión semanal (Friday)**: `watchlist` complete for every candidate (`levels`, `conditions`, `state`, `note`), including `state: "descartada"` when a thesis breaks (remove it from the list the following week); `catalysts[].scenarios` for every Alto/Medio event; `profiles[].realized`.
+- A candidate whose conditions are all met gets `state: "activado"`, and the task that detects it schedules the entry order in the logbook following the Reglas.
