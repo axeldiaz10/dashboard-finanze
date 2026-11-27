@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-27T11:40:00Z",
-  "updated_by": "Pre-apertura 27/11",
+  "updated_at": "2026-11-27T21:50:00Z",
+  "updated_by": "Cierre 27/11",
   "start": {
     "date": "2026-11-24",
     "capital": 10000,
@@ -11,7 +11,7 @@
   "profiles": {
     "Conservador": {
       "allocated": 4000,
-      "cash": 4000.0,
+      "cash": 1092.91,
       "stop_pct": 8,
       "realized": 0
     },
@@ -79,7 +79,7 @@
       "thesis": "Apuesta de mayor beta dentro de cripto."
     }
   },
-  "headline": "Rebote fuerte en futuros (S&P +1,8%, Nasdaq +2,4%) para la media rueda hasta las 15:00: las limitadas de SPY y GLD quedaron debajo del precio y probablemente no se ejecuten; BIL sí. Cripto en máximos desde la entrada.",
+  "headline": "Semana corta cerrada: SPY entró a 720,19 y cerró 728,86 (+1,7%); cripto cedió (BTC −1,7%). Lunes 30/11: limitada de GLD a 335,52, QQQ a confirmar y firma de Argentina GNL (gatillo de VIST).",
   "news": [
     {
       "title": "Futuros de Wall Street suben fuerte: vuelve la compra de tecnológicas de IA",
@@ -156,7 +156,7 @@
       "event": "Feriado de Acción de Gracias (EE.UU. cerrado); 27/11 cierre 15:00",
       "impact": "Bajo",
       "assets": "Acciones y ETFs",
-      "scenario": "Feriado sin novedades; cripto +0,8% a +1,7%",
+      "scenario": "Feriado sin novedades; media rueda del 27/11 con S&P +1,7%",
       "plan": "No enviar entradas nuevas el 27/11.",
       "status": "Resuelto"
     },
@@ -217,15 +217,60 @@
       ]
     },
     {
+      "id": "C-011",
+      "date": "2026-12-01",
+      "time": "12:00",
+      "event": "ISM manufacturero de noviembre (EE.UU.)",
+      "impact": "Medio",
+      "assets": "SPY, QQQ, IWM, GLD, BTC",
+      "scenario": "Provisorio: en línea 50% (consenso se carga el domingo 29/11)",
+      "scenarios": [
+        {
+          "label": "En línea (neutro)",
+          "prob": 0.5,
+          "tone": "neutro"
+        },
+        {
+          "label": "Más débil (malo)",
+          "prob": 0.25,
+          "tone": "malo"
+        },
+        {
+          "label": "Más fuerte (bueno)",
+          "prob": 0.25,
+          "tone": "bueno"
+        }
+      ],
+      "plan": "A definir el domingo 29/11.",
+      "status": "Próximo"
+    },
+    {
       "id": "C-006",
       "date": "2026-12-04",
       "time": "10:30",
       "event": "Empleo de noviembre (EE.UU.)",
       "impact": "Alto",
       "assets": "Toda la cartera",
-      "scenario": "A completar el domingo",
+      "scenario": "Provisorio: en línea 50% (consenso se carga el domingo 29/11)",
       "plan": "A definir el domingo 29/11.",
-      "status": "Próximo"
+      "status": "Próximo",
+      "scenarios": [
+        {
+          "label": "En línea (neutro)",
+          "prob": 0.5,
+          "tone": "neutro"
+        },
+        {
+          "label": "Fuerte, más suba de tasas (malo)",
+          "prob": 0.25,
+          "tone": "malo"
+        },
+        {
+          "label": "Débil, alivio de tasas (bueno)",
+          "prob": 0.25,
+          "tone": "bueno"
+        }
+      ]
     },
     {
       "id": "C-007",
@@ -267,9 +312,18 @@
       "asset": "QQQ",
       "profile": "Moderado",
       "side": "Compra",
-      "type": "Limitada DAY (último precio +0,5%), a confirmar hoy en la revisión semanal",
+      "type": "Limitada DAY (último precio +0,5%), a confirmar en la revisión semanal",
       "qty": 2,
       "limit": null
+    },
+    {
+      "date": "2026-11-30",
+      "asset": "GLD",
+      "profile": "Conservador",
+      "side": "Compra",
+      "type": "Limitada DAY",
+      "qty": 3,
+      "limit": 335.52
     }
   ],
   "watchlist": [
@@ -301,7 +355,7 @@
         }
       ],
       "state": "esperando",
-      "note": "Último cierre 17,35 (25/11), arriba de 17,30 pero con volumen bajo (~119 mil en IEX): gatillo incompleto. Evento: Piper Sandler el 1/12."
+      "note": "Cerró 17,94 (+3,2%) el 27/11, máximo de 52 semanas, pero con 1,16M de volumen (media rueda; promedio 2,7M, gatillo >3M): incompleto. Piper Sandler el 1/12."
     },
     {
       "asset": "VIST",
@@ -327,7 +381,7 @@
         }
       ],
       "state": "esperando",
-      "note": "Firma de Argentina GNL confirmada para el lunes 30/11. Brent ~97 cumple su condición; VIST cerró 50,15 el 25/11 (falta >52)."
+      "note": "Cerró 51,79 (+3,3%) el 27/11 tras tocar 53,55: a 0,4% del gatillo de 52. Firma de Argentina GNL el lunes 30/11; Brent ~97 cumple."
     },
     {
       "asset": "AMBA",
@@ -348,7 +402,7 @@
           "met": false
         }
       ],
-      "note": "Descartada en Seguimiento tras el balance (cerró 35,67 el 25/11, −40% desde 59,75). Sale de la lista la semana próxima.",
+      "note": "Descartada tras el balance (cerró 35,29 el 27/11, −41% desde 59,75). Sale de la lista la semana próxima.",
       "state": "descartada"
     }
   ],
@@ -503,7 +557,7 @@
         }
       ]
     },
-    "note": "Último dato: miedo extremo en acciones (CNN 15, 25/11) y cripto (11, 26/11); hoy no se pudo leer ninguno de los dos índices. Con el rebote de hoy probablemente suban; los stops de cripto siguen 13-22% debajo del precio.",
+    "note": "Último dato leído: miedo extremo en acciones (CNN 15, 25/11) y cripto (11, 26/11); hoy no se pudieron leer los índices. El rebote de acciones del 27/11 (S&P +1,7%) no llegó a cripto (BTC −1,7%); stops de cripto 10-18% debajo del precio.",
     "crypto": {
       "value": 11,
       "label": "Miedo extremo",
