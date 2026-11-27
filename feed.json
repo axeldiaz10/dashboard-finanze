@@ -557,7 +557,7 @@
         }
       ]
     },
-    "note": "Último dato leído: miedo extremo en acciones (CNN 15, 25/11) y cripto (11, 26/11); hoy no se pudieron leer los índices. El rebote de acciones del 27/11 (S&P +1,7%) no llegó a cripto (BTC −1,7%); stops de cripto 10-18% debajo del precio.",
+    "note": "Último dato leído: miedo extremo en acciones (CNN 15, 25/11) y cripto (11, 26/11); hoy no se pudieron leer los índices. El rebote de acciones del 27/11 (S&P +1,7%) no llegó a cripto (BTC −1,7%); stops de cripto 10-20% debajo del precio.",
     "crypto": {
       "value": 11,
       "label": "Miedo extremo",
