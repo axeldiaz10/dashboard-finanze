@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-27T21:50:00Z",
-  "updated_by": "Cierre 27/11",
+  "updated_at": "2026-11-27T22:40:00Z",
+  "updated_by": "Revisión semanal 27/11",
   "start": {
     "date": "2026-11-24",
     "capital": 10000,
@@ -34,52 +34,59 @@
       "market": "Letras EE.UU.",
       "name": "Letras del Tesoro 1-3 meses",
       "conviction": "Alta",
-      "thesis": "Liquidez que rinde tasa con riesgo de precio casi nulo."
+      "thesis": "Liquidez que rinde tasa; con la Fed subiendo, el pilar se refuerza."
     },
     "SPY": {
       "profile": "Conservador",
       "market": "EE.UU.",
       "name": "S&P 500",
       "conviction": "Media",
-      "thesis": "Núcleo de la cartera: ganancias corporativas sostienen al índice pese al debate de tasas."
+      "thesis": "Núcleo: PIB 4,3% y ganancias sostienen al S&P; en camino, con riesgo de tasas (empleo 4/12, Fed 9/12)."
     },
     "GLD": {
       "profile": "Conservador",
       "market": "Commodities",
       "name": "Oro",
       "conviction": "Media",
-      "thesis": "Cobertura ante inflación persistente y riesgo geopolítico."
+      "thesis": "Cobertura ante inflación y riesgo geopolítico (Jazan, Brent ~97); limitada 335,52 el 30/11."
     },
     "QQQ": {
       "profile": "Moderado",
       "market": "EE.UU.",
       "name": "Nasdaq 100",
       "conviction": "Media",
-      "thesis": "Las grandes tecnológicas siguen liderando por la inversión en IA."
+      "thesis": "Rebote de IA tras caer ~20% del máximo; entrada en partes: 1 de 2 unidades el 30/11, la otra después de la Fed."
     },
     "BTC/USD": {
       "profile": "Moderado",
       "market": "Cripto",
       "name": "Bitcoin",
       "conviction": "Baja",
-      "thesis": "Posición chica para capturar un rebote tras la corrección."
+      "thesis": "En riesgo, no rota: la suba de la Fed pesa en la liquidez y no acompañó a las acciones."
     },
     "ETH/USD": {
       "profile": "Agresivo",
       "market": "Cripto",
       "name": "Ethereum",
       "conviction": "Baja",
-      "thesis": "Rebote si vuelve el apetito por riesgo en cripto."
+      "thesis": "En riesgo: sigue rezagada frente a BTC; dos semanas más así y se evalúa rotar."
     },
     "SOL/USD": {
       "profile": "Agresivo",
       "market": "Cripto",
       "name": "Solana",
+      "conviction": "Media",
+      "thesis": "En camino: +3,3% desde la entrada con BTC plano, cumple el rol de beta alta."
+    },
+    "XERS": {
+      "profile": "Agresivo",
+      "market": "EE.UU.",
+      "name": "Xeris Biopharma",
       "conviction": "Baja",
-      "thesis": "Apuesta de mayor beta dentro de cripto."
+      "thesis": "Recorlev crece >90% y la ruptura de 17,30 se sostiene; compra solo en retesteo (limitada 17,35)."
     }
   },
-  "headline": "Semana corta cerrada: SPY entró a 720,19 y cerró 728,86 (+1,7%); cripto cedió (BTC −1,7%). Lunes 30/11: limitada de GLD a 335,52, QQQ a confirmar y firma de Argentina GNL (gatillo de VIST).",
+  "headline": "Semana 1: cartera +0,27% vs SPY +1,38% y BTC −0,02% (poco invertido, no concluyente). Lunes: GLD 335,52, 1 QQQ 654,06 y XERS 17,35; resto en espera de empleo 4/12 y Fed 9/12.",
   "news": [
     {
       "title": "Futuros de Wall Street suben fuerte: vuelve la compra de tecnológicas de IA",
@@ -196,7 +203,7 @@
       "impact": "Medio",
       "assets": "XERS (candidata)",
       "scenario": "Neutro 45%",
-      "plan": "Mantener gatillo del radar.",
+      "plan": "Limitada GTC de 20 XERS a 17,35 (retesteo). Si la conferencia decepciona y cierra <15, se cancela y se descarta.",
       "status": "Próximo",
       "scenarios": [
         {
@@ -252,7 +259,7 @@
       "impact": "Alto",
       "assets": "Toda la cartera",
       "scenario": "Provisorio: en línea 50% (consenso se carga el domingo 29/11)",
-      "plan": "A definir el domingo 29/11.",
+      "plan": "Entrada en partes: solo 1 QQQ antes del dato. Consenso y plan fino el domingo 29/11.",
       "status": "Próximo",
       "scenarios": [
         {
@@ -279,9 +286,26 @@
       "event": "Fed: decisión de tasas (FOMC 8-9/12)",
       "impact": "Alto",
       "assets": "Toda la cartera",
-      "scenario": "A completar",
-      "plan": "A definir en la revisión del 4/12.",
-      "status": "Próximo"
+      "scenario": "Suba de 25 pb: 90% (FedWatch ~98%, Polymarket 94% al 25/11)",
+      "plan": "No sumar posiciones de riesgo el 8-9/12; la 2ª unidad de QQQ y IWM se evalúan después. Plan fino en la revisión del 4/12.",
+      "status": "Próximo",
+      "scenarios": [
+        {
+          "label": "Sube 25 pb (en precio)",
+          "prob": 0.9,
+          "tone": "neutro"
+        },
+        {
+          "label": "Sube 50 pb (malo)",
+          "prob": 0.05,
+          "tone": "malo"
+        },
+        {
+          "label": "Mantiene (bueno)",
+          "prob": 0.05,
+          "tone": "bueno"
+        }
+      ]
     },
     {
       "id": "C-008",
@@ -290,9 +314,26 @@
       "event": "Inflación CPI de noviembre",
       "impact": "Alto",
       "assets": "Toda la cartera",
-      "scenario": "A completar",
+      "scenario": "Provisorio: en línea 50% (consenso a cargar)",
       "plan": "A definir.",
-      "status": "Próximo"
+      "status": "Próximo",
+      "scenarios": [
+        {
+          "label": "En línea (neutro)",
+          "prob": 0.5,
+          "tone": "neutro"
+        },
+        {
+          "label": "Caliente (malo)",
+          "prob": 0.3,
+          "tone": "malo"
+        },
+        {
+          "label": "Fría (bueno)",
+          "prob": 0.2,
+          "tone": "bueno"
+        }
+      ]
     },
     {
       "id": "C-010",
@@ -301,21 +342,29 @@
       "event": "EE.UU.-China: vence la tregua comercial; audiencias 301 desde 25/1",
       "impact": "Alto",
       "assets": "QQQ, IWM, SPY, EEM, BTC",
-      "scenario": "A completar en la revisión semanal",
+      "scenario": "Provisorio: prórroga o negociación 50%",
       "plan": "A definir.",
-      "status": "Próximo"
+      "status": "Próximo",
+      "scenarios": [
+        {
+          "label": "Prórroga/negociación (bueno)",
+          "prob": 0.5,
+          "tone": "bueno"
+        },
+        {
+          "label": "Sin cambios (neutro)",
+          "prob": 0.25,
+          "tone": "neutro"
+        },
+        {
+          "label": "Escalada (malo)",
+          "prob": 0.25,
+          "tone": "malo"
+        }
+      ]
     }
   ],
   "planned_orders": [
-    {
-      "date": "2026-11-30",
-      "asset": "QQQ",
-      "profile": "Moderado",
-      "side": "Compra",
-      "type": "Limitada DAY (último precio +0,5%), a confirmar en la revisión semanal",
-      "qty": 2,
-      "limit": null
-    },
     {
       "date": "2026-11-30",
       "asset": "GLD",
@@ -324,6 +373,24 @@
       "type": "Limitada DAY",
       "qty": 3,
       "limit": 335.52
+    },
+    {
+      "date": "2026-11-30",
+      "asset": "QQQ",
+      "profile": "Moderado",
+      "side": "Compra",
+      "type": "Limitada DAY (1 de 2 unidades, la otra tras la Fed)",
+      "qty": 1,
+      "limit": 654.06
+    },
+    {
+      "date": "2026-11-30",
+      "asset": "XERS",
+      "profile": "Agresivo",
+      "side": "Compra",
+      "type": "Limitada GTC (retesteo de la ruptura; se cancela el 4/12 si no entra)",
+      "qty": 20,
+      "limit": 17.35
     }
   ],
   "watchlist": [
@@ -346,7 +413,7 @@
           "met": true
         },
         {
-          "text": "con volumen alto",
+          "text": "con volumen > 3M",
           "met": false
         },
         {
@@ -355,7 +422,7 @@
         }
       ],
       "state": "esperando",
-      "note": "Cerró 17,94 (+3,2%) el 27/11, máximo de 52 semanas, pero con 1,16M de volumen (media rueda; promedio 2,7M, gatillo >3M): incompleto. Piper Sandler el 1/12."
+      "note": "Gatillo cerca: cierra >17,30 desde el 23/11 (17,93 el 27/11) pero con 1,16M de volumen. Programada limitada GTC de 20 a 17,35 para el lunes. Piper Sandler 1/12."
     },
     {
       "asset": "VIST",
@@ -381,7 +448,7 @@
         }
       ],
       "state": "esperando",
-      "note": "Cerró 51,79 (+3,3%) el 27/11 tras tocar 53,55: a 0,4% del gatillo de 52. Firma de Argentina GNL el lunes 30/11; Brent ~97 cumple."
+      "note": "Cerró 51,79 el 27/11, a 0,4% del gatillo. Firma de Argentina GNL el lunes 30/11: si se firma y cierra >52 con Brent >85, el cierre del lunes programa la limitada."
     },
     {
       "asset": "AMBA",
@@ -450,6 +517,24 @@
         "direction": "Sube",
         "entry": 325.46,
         "target": 345.0,
+        "due": "2027-02-26",
+        "probability": 0.45
+      },
+      {
+        "id": "P-006",
+        "asset": "QQQ",
+        "direction": "Sube",
+        "entry": 650.81,
+        "target": 690.0,
+        "due": "2027-02-26",
+        "probability": 0.5
+      },
+      {
+        "id": "P-007",
+        "asset": "XERS",
+        "direction": "Sube",
+        "entry": 17.93,
+        "target": 21.0,
         "due": "2027-02-26",
         "probability": 0.45
       }
