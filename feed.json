@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-26T21:50:00Z",
-  "updated_by": "Cierre 26/11",
+  "updated_at": "2026-11-27T11:40:00Z",
+  "updated_by": "Pre-apertura 27/11",
   "start": {
     "date": "2026-11-24",
     "capital": 10000,
@@ -12,17 +12,20 @@
     "Conservador": {
       "allocated": 4000,
       "cash": 4000.0,
-      "stop_pct": 8
+      "stop_pct": 8,
+      "realized": 0
     },
     "Moderado": {
       "allocated": 3500,
       "cash": 2813.63,
-      "stop_pct": 12
+      "stop_pct": 12,
+      "realized": 0
     },
     "Agresivo": {
       "allocated": 2500,
       "cash": 1617.27,
-      "stop_pct": 20
+      "stop_pct": 20,
+      "realized": 0
     }
   },
   "assets": {
@@ -54,33 +57,12 @@
       "conviction": "Media",
       "thesis": "Las grandes tecnológicas siguen liderando por la inversión en IA."
     },
-    "EEM": {
-      "profile": "Moderado",
-      "market": "Emergentes",
-      "name": "Mercados emergentes",
-      "conviction": "Baja",
-      "thesis": "Diversificación fuera de EE.UU. con valuaciones más bajas."
-    },
-    "ARGT": {
-      "profile": "Moderado",
-      "market": "Argentina",
-      "name": "Acciones argentinas",
-      "conviction": "Media",
-      "thesis": "Riesgo país en niveles bajos sostiene acciones locales."
-    },
     "BTC/USD": {
       "profile": "Moderado",
       "market": "Cripto",
       "name": "Bitcoin",
       "conviction": "Baja",
       "thesis": "Posición chica para capturar un rebote tras la corrección."
-    },
-    "IWM": {
-      "profile": "Agresivo",
-      "market": "EE.UU.",
-      "name": "Russell 2000",
-      "conviction": "Media",
-      "thesis": "Empresas chicas, las más sensibles a una señal de alivio en tasas."
     },
     "ETH/USD": {
       "profile": "Agresivo",
@@ -97,41 +79,39 @@
       "thesis": "Apuesta de mayor beta dentro de cripto."
     }
   },
-  "headline": "Mañana (media rueda hasta 15:00) pueden entrar BIL, SPY y GLD con limitadas ya enviadas; cripto sube 3 días seguidos y los stops se subieron. QQQ se decide el viernes.",
+  "headline": "Rebote fuerte en futuros (S&P +1,8%, Nasdaq +2,4%) para la media rueda hasta las 15:00: las limitadas de SPY y GLD quedaron debajo del precio y probablemente no se ejecuten; BIL sí. Cripto en máximos desde la entrada.",
   "news": [
     {
-      "title": "La Fed da por hecha una suba de tasas el 9/12 y algunos piden más",
-      "summary": "Las minutas de la Fed mostraron que casi todos los miembros ven más subas. El gobernador Waller volvió a pedir media punta en la reunión del 8-9/12; con diciembre casi asegurado, la discusión pasa a enero.",
-      "why": "Tasas más altas presionan a QQQ e IWM y suelen pesar sobre cripto; BIL (letras) se beneficia. Por eso IWM quedó cancelada y QQQ en espera.",
-      "url": "https://pro.thestreet.com/stock-market-today/fed-minutes-almost-all-see-more-hikes-and-a-couple-floated-a-bigger-move",
-      "source": "TheStreet",
-      "assets": [
-        "QQQ",
-        "BIL",
-        "BTC/USD"
-      ]
-    },
-    {
-      "title": "Acciones en miedo extremo: el índice de CNN cayó a 15",
-      "summary": "El índice de miedo y codicia de CNN tocó 11 el 24/11 y cerró el 25/11 en 15, desde 30 hace un mes. En cripto, el índice de alternative.me está en 11.",
-      "why": "El miedo extremo suele aparecer cerca de pisos, pero no los marca: entramos con el perfil Conservador (BIL, SPY, GLD) y dejamos lo más volátil para después del 9/12.",
-      "url": "https://www.cnn.com/markets/fear-and-greed",
-      "source": "CNN",
+      "title": "Futuros de Wall Street suben fuerte: vuelve la compra de tecnológicas de IA",
+      "summary": "Para la media rueda de Black Friday, los futuros del S&P 500 suben ~1,8%, los del Nasdaq 100 ~2,4% y los del Dow ~1,3%. Nvidia sube cerca de 4% y Micron ~6% antes de la apertura; la VIX baja a ~25.",
+      "why": "Nuestras limitadas de SPY (720,25) quedan por debajo de una apertura estimada en ~729: probablemente no se ejecuten y no las vamos a perseguir. El apetito por riesgo sostiene a BTC, ETH y SOL.",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-firday-november-27-dow-sp-500-nasdaq-black-friday-holiday-091152065.html",
+      "source": "Yahoo Finance",
       "assets": [
         "SPY",
+        "QQQ",
         "BTC/USD"
       ]
     },
     {
-      "title": "Bitcoin encadena semanas de caída con la suba de la Fed en el horizonte",
-      "summary": "Bitcoin acumuló su sexta caída semanal a mediados de noviembre, con liquidaciones de posiciones apalancadas y la expectativa de suba de tasas en diciembre como principales motivos.",
-      "why": "BTC, ETH y SOL son las únicas posiciones abiertas; sus stops están entre 12% (BTC) y 26% (ETH y SOL) debajo del precio actual.",
-      "url": "https://www.fool.com/investing/2026/11/13/why-bitcoin-is-falling-today/",
-      "source": "The Motley Fool",
+      "title": "Oro +2,6% y Brent arriba de USD 97 tras un ataque hutí a la refinería de Jazan",
+      "summary": "Un proyectil alcanzó la refinería de Aramco en Jazan el jueves. El oro rebota a ~3.660-3.700 desde el mínimo de 3.427 del miércoles, la plata +6,6% y el Brent supera USD 97. El dólar retrocede de su máximo de 19 meses.",
+      "why": "Refuerza la tesis de GLD (cobertura geopolítica), pero nuestra limitada a 329,10 queda debajo de una apertura estimada en ~336-340. Brent >85 es una de las condiciones de VIST.",
+      "url": "https://www.home.saxo/en-mena/content/articles/macro/market-quick-take---brent-tops-usd-97-and-asian-stocks-extend-rebound---27-november-2026-27112026",
+      "source": "Saxo Bank",
       "assets": [
-        "BTC/USD",
-        "ETH/USD",
-        "SOL/USD"
+        "GLD",
+        "VIST"
+      ]
+    },
+    {
+      "title": "Argentina LNG: YPF aprobó la inversión final y la firma sigue para el lunes 30/11",
+      "summary": "El directorio de YPF aprobó por unanimidad la decisión final de inversión de Argentina LNG (con Eni y XRG, unos USD 51.000M en el RIGI). La firma será el 30/11 en el Palacio Libertad. El riesgo país sigue en 1.067 y el CCL ~1.810.",
+      "why": "Es el catalizador de VIST (candidata): si se firma y VIST cierra arriba de 52 con Brent >85, se evalúa la entrada. Con el riesgo país arriba de 1.000, ARGT sigue afuera.",
+      "url": "https://www.lavanguardianoticias.com.ar/nota-ypf-aprobo-por-unanimidad-la-inversion-final-de-argentina-lng-la-firma-sera-el-30-de-noviembre-en-el-palacio-libertad-123465",
+      "source": "La Vanguardia Noticias",
+      "assets": [
+        "VIST"
       ]
     }
   ],
@@ -187,7 +167,7 @@
       "event": "Argentina LNG: firma de la decisión final de inversión (YPF, Eni, XRG)",
       "impact": "Medio",
       "assets": "VIST (candidata), ARGT, YPF",
-      "scenario": "Se firma el 30/11: 75%",
+      "scenario": "Se firma el 30/11: 75% (firma confirmada en el Palacio Libertad; Brent ~97)",
       "plan": "Si se firma y VIST cierra >52 con Brent >85: evaluar limitada (Agresivo) en la siguiente revisión. ARGT sigue cancelada por riesgo país >1.000.",
       "status": "Próximo",
       "scenarios": [
@@ -287,7 +267,7 @@
       "asset": "QQQ",
       "profile": "Moderado",
       "side": "Compra",
-      "type": "Mercado a la apertura (OPG)",
+      "type": "Limitada DAY (último precio +0,5%), a confirmar hoy en la revisión semanal",
       "qty": 2,
       "limit": null
     }
@@ -321,7 +301,7 @@
         }
       ],
       "state": "esperando",
-      "note": "Cierra arriba de 17,30 desde el 23/11 (17,35 el 25/11), pero con volumen por debajo del promedio: gatillo incompleto."
+      "note": "Último cierre 17,35 (25/11), arriba de 17,30 pero con volumen bajo (~119 mil en IEX): gatillo incompleto. Evento: Piper Sandler el 1/12."
     },
     {
       "asset": "VIST",
@@ -343,17 +323,17 @@
         },
         {
           "text": "Brent > 85",
-          "met": false
+          "met": true
         }
       ],
       "state": "esperando",
-      "note": "La firma de Argentina GNL pasó al lunes 30/11. VIST cerró 50,15 el 25/11 (falta >52)."
+      "note": "Firma de Argentina GNL confirmada para el lunes 30/11. Brent ~97 cumple su condición; VIST cerró 50,15 el 25/11 (falta >52)."
     },
     {
       "asset": "AMBA",
       "name": "Ambarella",
       "trigger": "Anuncio oficial de NXP o cierre sostenido >61",
-      "status": "Observando",
+      "status": "Descartada",
       "levels": {
         "trigger": 61.0,
         "target": 70.0
@@ -368,8 +348,8 @@
           "met": false
         }
       ],
-      "note": "Cayó de 55,50 a 35,67 entre el 23 y el 25/11 tras el balance. El plan era descartarla si decepcionaba: la revisa la planificación del domingo.",
-      "state": "esperando"
+      "note": "Descartada en Seguimiento tras el balance (cerró 35,67 el 25/11, −40% desde 59,75). Sale de la lista la semana próxima.",
+      "state": "descartada"
     }
   ],
   "predictions": {
@@ -400,6 +380,24 @@
         "target": 70.0,
         "due": "2027-01-08",
         "probability": 0.35
+      },
+      {
+        "id": "P-004",
+        "asset": "SPY",
+        "direction": "Sube",
+        "entry": 717.59,
+        "target": 750.0,
+        "due": "2027-02-26",
+        "probability": 0.5
+      },
+      {
+        "id": "P-005",
+        "asset": "GLD",
+        "direction": "Sube",
+        "entry": 325.46,
+        "target": 345.0,
+        "due": "2027-02-26",
+        "probability": 0.45
       }
     ],
     "closed": 0,
@@ -505,7 +503,7 @@
         }
       ]
     },
-    "note": "Miedo extremo en acciones y cripto (último dato 25-26/11; hoy no se pudo actualizar). Cripto rebotó igual y los stops de BTC, ETH y SOL quedaron 12%, 20% y 20% debajo del máximo.",
+    "note": "Último dato: miedo extremo en acciones (CNN 15, 25/11) y cripto (11, 26/11); hoy no se pudo leer ninguno de los dos índices. Con el rebote de hoy probablemente suban; los stops de cripto siguen 13-22% debajo del precio.",
     "crypto": {
       "value": 11,
       "label": "Miedo extremo",
@@ -523,5 +521,5 @@
       ]
     }
   },
-  "news_date": "2026-11-26"
+  "news_date": "2026-11-27"
 }
